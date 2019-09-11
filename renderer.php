@@ -64,6 +64,29 @@ class mod_poster_renderer extends plugin_renderer_base {
     }
 
     /**
+     * Render only the poster content (external.php)
+     *
+     * @param stdClass $poster The poster instance record
+     * @return string
+     */
+    public function render_postercontent($poster) {
+      
+        $out = '';
+/*
+        if ($poster->shownameview) {
+            $out .= $this->view_page_heading($poster);
+        }
+
+        if ($poster->showdescriptionview) {
+            $out .= $this->view_page_description($poster);
+        }
+*/
+        $out .= $this->view_page_content($poster);
+
+        return $out;
+    }
+    
+    /**
      * Render the page title at the view.php page
      *
      * @param stdClass $poster The poster instance record
